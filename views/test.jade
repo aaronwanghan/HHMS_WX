@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	div(ng-app='myApp')
+		div(ng-controller='testController')
+			div(class='page-header' ng-if='test',ng-show='showTestPanel')
+				h4 {{test.date}}
+				div(class='panel panel-default', ng-repeat='i in test.items') 
+					div(class='panel-heading') {{i.title}}
+					ul(class='list-group')
+						li(class='list-group-item',ng-repeat='c in i.children')
+							a(href!='/items/{{c.id}}/{{id}}',style="color:{{ ['blue','black','red'][c.valueType+1] }}") {{c.title}}:{{c.content}}
+			div(ng-view)

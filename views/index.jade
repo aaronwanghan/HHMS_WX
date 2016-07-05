@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	div(ng-app='myApp')
+		a(href='/items/123/3123') test
+		div(ng-view='')

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	div(ng-app='myApp',ng-controller='userController' class='panel panel-default')
+		div(class='panel-heading') 用户绑定
+		div(class='panel-body')
+			div(ng-show='showLoginPanel')
+				div(class='input-group input')
+					span(class='input-group-addon') 用户名：
+					input(class='form-control',type='text',ng-model='email')
+				div(class='input-group input')
+					span(class='input-group-addon') 密码：
+					input(class='form-control',type='password',ng-model='password')
+				button(class='btn btn-default',ng-click='login()' style='width:100%') 登录
+			div(class='alert alert-warning' role='alert',ng-if='message') {{message}}

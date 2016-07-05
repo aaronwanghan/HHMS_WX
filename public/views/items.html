@@ -1,0 +1,18 @@
+<div class="panel panel-default" ng-show="showChartItems">
+	<div class="panel-heading" ng-if="testitem">{{testitem.name}}</div>
+	<div ng-if="showChart">
+		<canvas class="chart chart-line" chart-data="data" 
+			chart-labels="labels"
+			chart-series="series" chart-options="options"
+			chart-dataset-override="datasetOvereide" />
+	</div>
+	<div class="panel-body">
+		<ul class="list-group" ng-if="chartitems">
+			<li class="list-group-item" ng-repeat="ci in chartitems" style="color:{{ ['blue','black','red'][ci.valueType+1] }}">{{ci.date}}: {{ci.content}}</li>
+		</ul>
+	</div>	
+
+	<div class="panel-footer">
+		<button class="btn btn-default" ng-click="exit()" >退回</button>
+	</div>
+</div>
