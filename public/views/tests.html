@@ -1,0 +1,14 @@
+<div class="panel panel-default" ng-controller="TestsListController">
+	<div class="panel-heading" >体检报告</div>
+	<div class="panel-body">
+		<ul class="list-group" ng-if="tests">
+			<li class="list-group-item" ng-repeat="test in tests">
+				<a href="#/test/{{test.v}}">{{test.title}}</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="alert alert-warning" role="alert" ng-if="message">
+		{{message}}
+	</div>
+</div>

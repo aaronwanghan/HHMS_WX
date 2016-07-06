@@ -1,0 +1,19 @@
+<div ng-controller="LoginController" class="panel panel-default">
+	<div class="panel-heading">用户绑定</div>
+	<div class="panel-body">
+		<div class="input-group input">
+			<span class="input-group-addon">用户名：</span>
+			<input class="form-control" type="text" ng-model="email" />
+		</div>
+		<div class="input-group input">
+			<span class="input-group-addon">密码：</span>
+			<input class="form-control" type="password" ng-model="password" />
+		</div>
+		
+		<button class="btn btn-default" ng-click="login()" style="width:100%">登录</button>
+	</div>
+	
+	<div class="alert alert-warning" role="alert" ng-if="message">
+		{{message}}  {{v}}
+	</div>
+</div>

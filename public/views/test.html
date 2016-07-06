@@ -1,0 +1,16 @@
+<div ng-controller="TestController">
+	<div class="page-header" ng-if="test">
+		<h4>{{test.date}}</h4>
+		<div class="panel panel-default" ng-repeat="i in test.items">
+			<div class="panel-heading">{{i.title}}</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="c in i.children">
+					<a href="#/item/{{id}}/{{c.id}}"
+						style="color:{{ ['blue','black','red'][c.valueType+1] }}">
+						{{c.title}}:{{c.content}}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
